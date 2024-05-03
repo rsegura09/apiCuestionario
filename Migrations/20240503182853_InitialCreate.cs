@@ -12,12 +12,12 @@ namespace apiCuestionario.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "cuestionario",
+                name: "Cuestionarios",
                 columns: table => new
                 {
                     IdCuestionario = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IdUser = table.Column<int>(type: "int", nullable: false),
+                    IdPersona = table.Column<int>(type: "int", nullable: false),
                     Titulo = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
                     Descripcion = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
                     FechaDeCreacion = table.Column<DateTime>(type: "datetime", nullable: false),
@@ -25,7 +25,7 @@ namespace apiCuestionario.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_cuestionario", x => x.IdCuestionario);
+                    table.PrimaryKey("PK_Cuestionarios", x => x.IdCuestionario);
                 });
         }
 
@@ -33,7 +33,7 @@ namespace apiCuestionario.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "cuestionario");
+                name: "Cuestionarios");
         }
     }
 }

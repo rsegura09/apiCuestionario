@@ -1,4 +1,5 @@
 using apiCuestionario;
+using apiCuestionario.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSqlServer<CuestionarioContext>(builder.Configuration.GetConnectionString("cuestionario"));
+builder.Services.AddScoped<ICuestionarioService, CuestionarioService>();
 
 var app = builder.Build();
 
