@@ -40,7 +40,7 @@ namespace apiCuestionario.Migrations
                     b.Property<DateTime>("FechaDeEjecucion")
                         .HasColumnType("datetime");
 
-                    b.Property<int>("IdUser")
+                    b.Property<int>("IdPersona")
                         .HasColumnType("int");
 
                     b.Property<string>("Titulo")
@@ -49,7 +49,7 @@ namespace apiCuestionario.Migrations
 
                     b.HasKey("IdCuestionario");
 
-                    b.ToTable("cuestionario", (string)null);
+                    b.ToTable("Cuestionarios", (string)null);
                 });
 #pragma warning restore 612, 618
         }
