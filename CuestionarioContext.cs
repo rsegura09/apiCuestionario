@@ -15,6 +15,7 @@ namespace apiCuestionario
             {
                 cuestionario.ToTable("Cuestionarios");
                 cuestionario.HasKey(p => p.IdCuestionario);
+                cuestionario.Property(p => p.IdCuestionario).UseIdentityColumn();
                 cuestionario.Property(p => p.IdPersona);
                 cuestionario.Property(p => p.Titulo).HasMaxLength(250);
                 cuestionario.Property(p => p.Descripcion).HasMaxLength(250);
