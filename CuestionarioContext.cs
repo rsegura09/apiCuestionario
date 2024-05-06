@@ -5,7 +5,9 @@ namespace apiCuestionario
 {
     public class CuestionarioContext : DbContext
     {
-        public DbSet<Cuestionario> Cuestionarios {  get; set; }
+        public DbSet<Cuestionario> Cuestionarios { get; set; }
+
+        public DbSet<Persona> Personas { get; set; }
 
         public CuestionarioContext(DbContextOptions options) : base(options) { }
 
@@ -23,9 +25,19 @@ namespace apiCuestionario
                 cuestionario.Property(p => p.FechaDeEjecucion).HasColumnType("datetime");
             });
 
+            modelBuilder.Entity<Persona>(persona =>
+            {
+                persona.ToTable("Personas");
+                persona.HasKey(p => p.IdPersona);
+                persona.Property(p => p.IdPersona).UseIdentityColumn();
+                persona.Property(p => p.NombreUsuario).HasMaxLength(250);
+                persona.Property(p => p.Contrasenna).HasMaxLength(250);
+                persona.Property(p => p.Nombre).HasMaxLength(250);
+                persona.Property(p => p.Correo).HasMaxLength(250);
+                persona.Property(p => p.FechaDeRegistro).HasColumnType("datetime");
+                persona.Property(p => p.Rol).HasMaxLength(5);
+            });
 
         }
-
-
     }
 }
