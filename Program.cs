@@ -10,7 +10,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSqlServer<CuestionarioContext>(builder.Configuration.GetConnectionString("cuestionario"));
+
 builder.Services.AddScoped<ICuestionarioService, CuestionarioService>();
+builder.Services.AddScoped<IPersonaService, PersonaService>();
 
 var app = builder.Build();
 
