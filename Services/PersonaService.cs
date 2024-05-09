@@ -15,7 +15,6 @@ namespace apiCuestionario.Services
         CuestionarioContext _db;
         public PersonaService(CuestionarioContext db)
         {
-
             _db = db;
         }
 

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using apiCuestionario;
 
@@ -11,9 +12,11 @@ using apiCuestionario;
 namespace apiCuestionario.Migrations
 {
     [DbContext(typeof(CuestionarioContext))]
-    partial class CuestionarioContextModelSnapshot : ModelSnapshot
+    [Migration("20240509155725_CreacionDeTablas")]
+    partial class CreacionDeTablas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
