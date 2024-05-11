@@ -20,13 +20,24 @@ namespace apiCuestionario.Controllers
             {
                 return Ok(_respuestaService.ListarRespuestas());
             }
-            else { return NotFound(); }
+            return NotFound();
         }
 
         [HttpPost]
         public IActionResult GuardarPregunta([FromBody] Respuesta respuesta) {
             _respuestaService.GuardarRespuesta(respuesta);
             return Ok();
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult BuscarRespuesta(int id)
+        {
+            var respuesta = _respuestaService.BuscarRespuesta(id);
+            if(respuesta != null)
+            {
+                return Ok(respuesta);
+            }
+            return NotFound();
         }
     }
 }

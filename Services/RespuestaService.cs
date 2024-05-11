@@ -7,6 +7,7 @@ namespace apiCuestionario.Services
     {
         IEnumerable<Respuesta> ListarRespuestas();
         Task GuardarRespuesta(Respuesta respuesta);
+        Respuesta BuscarRespuesta(int id);
 
     }
     public class RespuestaService: IRespuestaService
@@ -37,6 +38,12 @@ namespace apiCuestionario.Services
             {
 
             }
+        }
+
+        public Respuesta BuscarRespuesta(int id)
+        {
+            var respuesta = _db.Respuestas.Find(id);
+            return respuesta;
         }
     }
 }
