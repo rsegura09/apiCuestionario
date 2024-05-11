@@ -9,9 +9,9 @@ namespace apiCuestionario.Controllers
     public class PersonaController : ControllerBase
     {
         private readonly IPersonaService _personaService;
-        public PersonaController(IPersonaService cuestionarioService)
+        public PersonaController(IPersonaService PersonaService)
         {
-            _personaService = cuestionarioService;
+            _personaService = PersonaService;
         }
 
         [HttpGet]
