@@ -27,5 +27,41 @@ namespace apiCuestionario.Controllers
                 return NotFound();
             }
         }
+
+        [HttpPost]
+        public IActionResult GuardarPregunta([FromBody] Pregunta pregunta)
+        {
+            _preguntaService.GuardarPregunta(pregunta);
+            return Ok();
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult BuscarPregunta(int id)
+        {
+            var pregunta = _preguntaService.BuscarPregunta(id);
+            if (pregunta != null)
+            {
+                return Ok(pregunta);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult BorrarPregunta(int id)
+        {
+            var pregunta = _preguntaService.BuscarPregunta(id);
+            if(pregunta != null)
+            {
+                _preguntaService.EliminarPregunta(pregunta);
+                return Ok();
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
     }
 }
