@@ -39,5 +39,17 @@ namespace apiCuestionario.Controllers
             }
             return NotFound();
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult EliminarRespuesta(int id)
+        {
+            var respuesta = _respuestaService.BuscarRespuesta(id);
+            if (respuesta != null)
+            {
+                _respuestaService.EliminarRespuesta(respuesta);
+                return Ok();
+            }
+            return NotFound();
+        }
     }
 }

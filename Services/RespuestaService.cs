@@ -8,6 +8,7 @@ namespace apiCuestionario.Services
         IEnumerable<Respuesta> ListarRespuestas();
         Task GuardarRespuesta(Respuesta respuesta);
         Respuesta BuscarRespuesta(int id);
+        void EliminarRespuesta(Respuesta respuesta);
 
     }
     public class RespuestaService: IRespuestaService
@@ -44,6 +45,12 @@ namespace apiCuestionario.Services
         {
             var respuesta = _db.Respuestas.Find(id);
             return respuesta;
+        }
+
+        public void EliminarRespuesta(Respuesta respuesta)
+        {
+            _db.Respuestas.Remove(respuesta);
+            _db.SaveChanges();
         }
     }
 }
