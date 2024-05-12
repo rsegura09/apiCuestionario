@@ -14,6 +14,8 @@ builder.Services.AddSqlServer<CuestionarioContext>(builder.Configuration.GetConn
 builder.Services.AddScoped<ICuestionarioService, CuestionarioService>();
 builder.Services.AddScoped<IPersonaService, PersonaService>();
 builder.Services.AddScoped<IPreguntaService, PreguntaService>();
+builder.Services.AddScoped<IRespuestaService, RespuestaService>();
+builder.Services.AddScoped<IRespuestaUsuarioService, RespuestaUsuarioService>();
 
 var app = builder.Build();
 

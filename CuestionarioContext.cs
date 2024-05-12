@@ -8,6 +8,8 @@ namespace apiCuestionario
         public DbSet<Cuestionario> Cuestionarios { get; set; }
         public DbSet<Persona> Personas { get; set; }
         public DbSet<Pregunta> Preguntas { get; set; }
+        public DbSet<Respuesta> Respuestas { get; set; }
+        public DbSet<RespuestaUsuario> RespuestaUsuario { get; set; }
 
         public CuestionarioContext(DbContextOptions options) : base(options) { }
 
