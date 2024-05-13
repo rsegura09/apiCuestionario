@@ -42,7 +42,7 @@ namespace apiCuestionario
 
             modelBuilder.Entity<Pregunta>(pregunta =>
             {
-                pregunta.ToTable("Pregunta");
+                pregunta.ToTable("Preguntas");
                 pregunta.HasKey( p => p.IdPregunta);
                 pregunta.Property(p => p.IdPregunta).UseIdentityColumn();
                 pregunta.Property(p => p.IdCuestionario);
@@ -54,7 +54,7 @@ namespace apiCuestionario
 
             modelBuilder.Entity<Respuesta>(respuesta =>
             {
-                respuesta.ToTable("Respuesta");
+                respuesta.ToTable("Respuestas");
                 respuesta.HasKey( p => p.IdRespuesta);
                 respuesta.Property(p => p.IdRespuesta).UseIdentityColumn();
                 respuesta.Property(p => p.IdPregunta);
