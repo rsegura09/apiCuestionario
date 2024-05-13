@@ -24,7 +24,7 @@ namespace apiCuestionario.Controllers
         }
 
         [HttpPost]
-        public IActionResult GuardarPregunta([FromBody] Respuesta respuesta) {
+        public IActionResult GuardarRespuesta([FromBody] Respuesta respuesta) {
             _respuestaService.GuardarRespuesta(respuesta);
             return Ok();
         }
